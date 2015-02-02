@@ -65,7 +65,7 @@ body {
                         <div class="alert alert-danger" role="alert">{{$errors->first('password')}}</div>
                     @endif
                 </div>
-
+                {{HTML::linkRoute('password.remind', 'Forgot Password?')}}<br>
                 <div class="action">
                   {{ Form::submit('Login', array('class' => 'btn btn-lg btn-primary btn-block')) }}
 
