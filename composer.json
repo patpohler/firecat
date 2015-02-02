@@ -1,0 +1,25 @@
+{
+    "name": "anecka/firecat",
+    "description": "Quick start platform for Laravel.",
+    "authors": [
+        {
+            "name": "Anecka",
+            "email": "contact@anecka.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/controllers",
+            "src/models"
+        ],
+        "psr-0": {
+            "Anecka\\Firecat\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
