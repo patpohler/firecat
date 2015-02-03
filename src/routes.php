@@ -10,7 +10,7 @@ Route::controller('login', 'Anecka\Firecat\Controllers\SessionController');
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
     Route::get('/', 'Anecka\Firecat\Controllers\FcadminController@getIndex');
 
-    Route::get('/users', 'Anecka\Firecat\Controllers\FcadminController@getUsers');
+    Route::resource('users', 'Anecka\Firecat\Controllers\UserController');
 });
 //Route::controller('fcadmin', 'Anecka\Firecat\Controllers\FcadminController');
 

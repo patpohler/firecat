@@ -41,13 +41,18 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function save(array $options = array())
     {
         unset($this->attributes['password_confirmation']);
-        parent::save();
+        return parent::save();
     }
 
-    public function validate($data)
+    public function validate($data, $rules = array())
     {
-        // make a new validator object
-        $v = \Validator::make($data, $this->rules);
+		if(sizeof($rules) > 0) {
+			// make a new validator object
+			$v = \Validator::make($data, $rules);
+		} else {
+			// make a new validator object
+			$v = \Validator::make($data, $this->rules);
+		}
 
         // check for failure
         if ($v->fails())

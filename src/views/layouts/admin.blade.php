@@ -145,8 +145,8 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="{{ url('admin/') }}">Overview <span class="sr-only">(current)</span></a></li>
-                        <li><a href="{{ url('admin/users') }}">Users</a></li>
+                        <li @if(Request::segment(2) == '') class="active" @endif><a href="{{ url('admin/') }}">Overview <!--<span class="sr-only">(current)--></span></a></li>
+                        <li @if(Request::segment(2) == 'users') class="active" @endif><a href="{{ url('admin/users') }}">Users</a></li>
                         <li><a href="#">Analytics</a></li>
                         <li><a href="#">Export</a></li>
                     </ul>

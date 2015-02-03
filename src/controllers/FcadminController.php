@@ -15,13 +15,4 @@ class FcadminController extends \BaseController {
         //$user = new Models\User;
         return \View::make('firecat::fcadmin.index');
     }
-
-    public function getUsers()
-    {
-        $users = Models\User::all();
-        $data = array(
-            'users' => $users
-        );
-        return \View::make('firecat::fcadmin.users', $data);
-    }
 }
